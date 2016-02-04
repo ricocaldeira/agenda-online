@@ -1,4 +1,4 @@
-describe Contact, wip:true do
+describe Contact do
 
   before(:each) { @contact = Contact.new(name: 'Contact Name', email: 'contact@example.com') }
 
