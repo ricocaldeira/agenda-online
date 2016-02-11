@@ -1,6 +1,10 @@
 describe Contact do
 
-  before(:each) { @contact = Contact.new(name: 'Contact Name', email: 'contact@example.com') }
+  before(:each) {
+    @user = FactoryGirl.create(:user)
+    @contact_schema = FactoryGirl.create(:contact_schema, user_id: @user.id)
+    @contact = FactoryGirl.create(:contact, user_id: @user.id)
+  }
 
   subject { @contact }
 
@@ -12,7 +16,7 @@ describe Contact do
   end
 
   it "#email returns a string" do
-    expect(@contact.email).to match 'contact@example.com'
+    expect(@contact.email).to match 'contact@email.com'
   end
 
   it "should not be valid without an User" do

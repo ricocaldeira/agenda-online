@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contact_fields
   resources :contact_schemas
   resources :contacts
   root to: 'visitors#index'

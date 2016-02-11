@@ -1,6 +1,21 @@
 <p>
-  <strong>Fields:</strong>
-  <%= @contact_schema.fields %>
+  <strong>*Name:</strong>
 </p>
+
+<p>
+  <strong>Email:</strong>
+</p>
+
+<% @contact_schema.fields.each do |field| %>
+  <p>
+    <strong>
+      <% if field.required? %>
+        *
+      <%end%>
+      <%= field.name %>:
+    </strong>
+  </p>
+<% end %>
+
 
 <%= link_to 'Edit', edit_contact_schema_path(@contact_schema) %>

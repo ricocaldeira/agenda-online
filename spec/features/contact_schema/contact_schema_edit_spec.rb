@@ -34,9 +34,9 @@ feature 'Contact Schema edit', :devise, :js do
   #   Then I see a contact schema updated message
   scenario 'user changes contact schema fields' do
     visit edit_contact_schema_path(@contact_schema)
-    fill_in 'Fields', :with => 'NewContactSchemaName'
+    click_link('Add Field')
+    fill_in 'field_name', :with => 'phone'
     click_button 'Update Contact schema'
     expect(page).to have_content 'Contact schema was successfully updated'
   end
-
 end

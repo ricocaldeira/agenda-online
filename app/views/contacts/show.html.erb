@@ -8,15 +8,12 @@
   <%= @contact.email %>
 </p>
 
-<p>
-  <strong>Properties:</strong>
-  <%= @contact.properties %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @contact.user %>
-</p>
+<% @contact.properties.each do |key, value| %>
+  <p>
+    <strong><%= key %>:</strong>
+    <%= value %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>

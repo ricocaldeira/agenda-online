@@ -47,6 +47,6 @@ feature 'Create Contact', :devise do
   #   Then I should not be able to create a new contact without a name
   scenario 'user can\'t create a new contact without a name' do
     click_button('Create Contact')
-    expect(page).to have_content 'Namecan\'t be blank'
+    expect(page).to have_content 'Name can\'t be blank'
   end
 end

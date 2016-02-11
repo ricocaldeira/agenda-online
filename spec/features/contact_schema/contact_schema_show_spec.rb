@@ -5,7 +5,7 @@ Warden.test_mode!
 #   As a user
 #   I want to visit my contact schema page
 #   So I can see a contact schema for my contacts
-feature 'Contact page', :devise do
+feature 'Contact page', :devise, :js do
 
   before(:each) do
     @user = FactoryGirl.create(:user)
@@ -21,9 +21,14 @@ feature 'Contact page', :devise do
   #   Given I am signed in
   #   When I visit the contact schema page
   #   Then I see contact schema information
-  scenario 'user sees contact schema information' do
-    visit contact_schema_path(@contact_schema)
-    expect(page).to have_content 'Fields'
+  scenario 'user sees contact schema information', wip:true do
+    visit edit_contact_schema_path(@contact_schema)
+    click_link('Add Field')
+    fill_in('field_name', :with => 'Phone')
+    click_button('Update Contact schema')
+    expect(page).to have_content 'Name'
+    expect(page).to have_content 'Email'
+    expect(page).to have_content 'Phone'
   end
 
   # Scenario: Visitors cannot see contacts page

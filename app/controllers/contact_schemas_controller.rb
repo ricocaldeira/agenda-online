@@ -25,6 +25,8 @@ class ContactSchemasController < ApplicationController
     end
 
     def contact_schema_params
-      params.require(:contact_schema).permit(:fields, :user_id)
+      params.require(:contact_schema).permit(:user_id, :fields_attributes).tap do |whitelisted|
+        whitelisted[:fields_attributes] = params[:contact_schema][:fields_attributes]
+      end
     end
 end
