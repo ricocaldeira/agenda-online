@@ -1,0 +1,20 @@
+<div class="field input">
+  <input type="text" placeholder="Name" class="form-control" disabled>
+</div>
+
+<div class="field input">
+  <input type="text" placeholder="Email" class="form-control" disabled>
+</div>
+
+<%= simple_form_for(@contact_schema) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.fields_for :fields do |builder| %>
+      <%= render 'field_fields', f: builder %>
+  <% end %>
+  <%= link_to_add_fields "+ Add Field", f, :fields %>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-success btn-lg' %>
+  </div>
+<% end %>

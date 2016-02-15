@@ -1,0 +1,31 @@
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation" class="panel panel-danger">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field input">
+    <%= f.text_field :name, class: 'form-control', placeholder: :name %>
+  </div>
+
+  <div class="field input">
+    <%= f.text_field :email, class: 'form-control', placeholder: :email %>
+  </div>
+
+  <%= f.fields_for :properties, OpenStruct.new(@contact.properties) do |builder| %>
+    <% current_user.contact_schema.fields.each do |field| %>
+      <%= render "contacts/fields/#{field.field_type}", field: field, f: builder %>
+    <% end %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit class: 'btn btn-success btn-lg' %>
+  </div>
+<% end %>
