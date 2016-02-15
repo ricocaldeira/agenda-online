@@ -46,7 +46,7 @@ test:
   encoding: unicode
   database: agenda-online_test
   pool:     5
-  username: agenda-online
+  username: agendaonline
   password:
   template: template0
 
