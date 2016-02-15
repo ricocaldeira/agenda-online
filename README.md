@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ricocaldeira/agenda-online.svg?branch=master)](https://travis-ci.org/ricocaldeira/agenda-online)
 # Agenda Online
 
 This is an application where users can store contact details.
