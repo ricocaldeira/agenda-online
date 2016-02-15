@@ -1,21 +1,28 @@
-<p>
-  <strong>*Name:</strong>
-</p>
+<h2>Contact Fields</h2>
+<p>Fields with <b>!</b> are required</p>
 
-<p>
-  <strong>Email:</strong>
-</p>
+<div class="field input-group input-group-lg">
+  <span class="input-group-addon">!</span>
+  <input type="text" class="form-control" placeholder="Name" disabled>
+</div>
+
+<div class="field input-group input-group-lg">
+  <span class="input-group-addon">+</span>
+  <input type="text" class="form-control" placeholder="Email" disabled>
+</div>
 
 <% @contact_schema.fields.each do |field| %>
-  <p>
-    <strong>
+  <div class="field input-group input-group-lg">
+    <span class="input-group-addon">
       <% if field.required? %>
-        *
+        !
+      <% else %>
+        +
       <%end%>
-      <%= field.name %>:
-    </strong>
-  </p>
+    </span>
+    <input type="text" class="form-control" placeholder="<%= field.name %>" disabled>
+  </div>
 <% end %>
 
 
-<%= link_to 'Edit', edit_contact_schema_path(@contact_schema) %>
+<%= link_to 'Edit', edit_contact_schema_path(@contact_schema), class: 'btn btn-primary btn-lg' %>

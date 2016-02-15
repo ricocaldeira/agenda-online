@@ -1,19 +1,18 @@
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
+<div class="field input">
+  <h3>Name</h3>
+  <input type="text" placeholder="<%= @contact.name %>" class="form-control" disabled>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
+<div class="field input">
+  <h3>Email</h3>
+  <input type="text" placeholder="<%= @contact.email %>" class="form-control" disabled>
+</div>
 
 <% @contact.properties.each do |key, value| %>
-  <p>
-    <strong><%= key %>:</strong>
-    <%= value %>
-  </p>
+  <div class="field input">
+    <h3><%= key %></h3>
+    <input type="text" placeholder="<%= value %>" class="form-control" disabled>
+  </div>
 <% end %>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'Edit', edit_contact_path(@contact), class: 'btn btn-primary btn-lg' %>
