@@ -1,4 +1,8 @@
 language: ruby
 rvm:
   - 2.2.2
-before_install: gem install bundler -v 1.10.6
+before_install: gem install bundler -v 1.11.2
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database agenda-online_test;' -U agenda-online
