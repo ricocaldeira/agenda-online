@@ -1,6 +1,6 @@
 <%= form_for(@contact) do |f| %>
   <% if @contact.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="panel panel-danger">
       <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
       <ul>
@@ -11,14 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="field input">
+    <%= f.text_field :name, class: 'form-control', placeholder: :name %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+  <div class="field input">
+    <%= f.text_field :email, class: 'form-control', placeholder: :email %>
   </div>
 
   <%= f.fields_for :properties, OpenStruct.new(@contact.properties) do |builder| %>
@@ -28,6 +26,6 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-success btn-lg' %>
   </div>
 <% end %>
