@@ -1,50 +1,15 @@
-Agenda Online
-================
+# Agenda Online
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+## Getting Started
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+1. Clone this repository to your local machine:
+    $ git clone https://github.com/ricocaldeira/agenda-online.git agenda-online
+where `agenda-online` is the folder name
 
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
+2. Change directory to `agenda-online` and run:
+    $ bundle install
 
-Problems? Issues?
------------
+3. Run migrations using:
+    $ rake db:create db:migrate
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.2.2
-- Rails 4.2.5
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+4. Using a browser, go to http://localhost:3000 and enjoy it!
