@@ -1,4 +1,4 @@
 test:
   adapter: postgresql
-  database: agenda-online_test
+  database: agenda_online_test
   username: postgres
